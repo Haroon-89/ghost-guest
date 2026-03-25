@@ -34,6 +34,15 @@ export const login = async (req, res) => {
   }
 };
 
+export const getMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select('-password');
+    res.json(user);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 export const verifyAlive = async (req, res) => {
   try {
     const payload = jwt.verify(req.params.token, process.env.JWT_SECRET);

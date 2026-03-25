@@ -1,0 +1,111 @@
+.vault-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 1.25rem;
+}
+
+.vault-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  overflow: hidden;
+}
+.vault-card:hover {
+  border-color: var(--border2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  transform: translateY(-2px);
+}
+
+.vault-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+  padding-bottom: 1rem;
+}
+
+.vault-card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+.vault-card-title { font-size: 1rem; font-weight: 600; }
+
+.vault-card-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text2);
+}
+.vault-card-row span.label { color: var(--text3); font-size: 0.78rem; min-width: 70px; }
+
+.vault-card-instructions {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.8rem;
+  font-size: 0.825rem;
+  color: var(--text2);
+  line-height: 1.5;
+  margin-top: 0.25rem;
+  word-break: break-word;
+}
+
+.card-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--border);
+  margin-top: auto;
+}
+.card-actions button {
+  padding: 0.7rem;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s;
+  background: transparent;
+}
+.card-actions .btn-edit {
+  color: var(--text2);
+  border-right: 1px solid var(--border);
+}
+.card-actions .btn-edit:hover { background: var(--surface2); color: var(--text); }
+.card-actions .btn-del { color: var(--danger); }
+.card-actions .btn-del:hover { background: var(--danger-bg); }
+
+/* Form section */
+.form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem;
+  margin-bottom: 1.75rem;
+  box-shadow: var(--shadow);
+}
+.form-section-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vault-form { display: flex; flex-direction: column; gap: 0.85rem; }
+.vault-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+.form-actions { display: flex; gap: 0.75rem; margin-top: 0.25rem; }
+
+@media (max-width: 600px) {
+  .vault-form-row { grid-template-columns: 1fr; }
+}
