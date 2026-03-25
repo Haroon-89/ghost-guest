@@ -16,3 +16,16 @@ Thumbs.db
 .vscode/
 
 *.lock
+
+# env variants
+.env.*
+!.env.example
+
+# test coverage
+coverage/
+
+# OS
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
